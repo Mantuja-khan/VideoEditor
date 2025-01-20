@@ -1,0 +1,33 @@
+.time-input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.time-input-container label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #64748b;
+}
+
+.time-input-field {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-family: monospace;
+  font-size: 0.9rem;
+  color: #1e293b;
+  background: white;
+  transition: all 0.2s ease;
+}
+
+.time-input-field:focus {
+  outline: none;
+  border-color: #4361ee;
+  box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.1);
+}
+
+.time-input-field::placeholder {
+  color: #94a3b8;
+}

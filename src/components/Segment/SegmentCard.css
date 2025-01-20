@@ -1,0 +1,181 @@
+.segment-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 0.8rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e2e8f0;
+  transition: all 0.2s ease;
+}
+
+.segment-card:hover {
+  border-color: #4361ee;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(67, 97, 238, 0.1);
+}
+
+/* Header Styles */
+.segment-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.8rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.segment-title {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.segment-number {
+  width: 24px;
+  height: 24px;
+  background: #4361ee;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.segment-title h3 {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #1e293b;
+}
+
+.segment-duration {
+  background: #f8fafc;
+  color: #4361ee;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* Time Controls */
+.segment-time-controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.time-control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.time-control-btn {
+  padding: 0.4rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.start-btn {
+  background: #10b981;
+  color: white;
+}
+
+.start-btn:hover {
+  background: #059669;
+}
+
+.end-btn {
+  background: #f43f5e;
+  color: white;
+}
+
+.end-btn:hover {
+  background: #e11d48;
+}
+
+/* Effects Section */
+.segment-effects {
+  background: #f8fafc;
+  border-radius: 8px;
+  padding: 0.8rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.8rem;
+}
+
+.effect-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.effect-label {
+  font-weight: 500;
+  color: #1e293b;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.effect-select {
+  padding: 0.4rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  color: #1e293b;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.effect-select:hover {
+  border-color: #4361ee;
+}
+
+.effect-select:focus {
+  outline: none;
+  border-color: #4361ee;
+  box-shadow: 0 0 0 2px rgba(67, 97, 238, 0.1);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .segment-card {
+    padding: 0.8rem;
+  }
+
+  .segment-time-controls {
+    grid-template-columns: 1fr;
+  }
+
+  .segment-effects {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .segment-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .segment-duration {
+    align-self: flex-start;
+  }
+}

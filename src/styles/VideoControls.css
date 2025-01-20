@@ -1,0 +1,205 @@
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 16px;
+  margin: 1.5rem 0;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+/* Base styles for all buttons */
+.control-btn,
+.add-segment-btn,
+.download-btn {
+  position: relative;
+  height: 54px;
+  border: none;
+  border-radius: 12px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  overflow: hidden;
+}
+
+/* Play/Pause button specific styles */
+.control-btn {
+  min-width: 54px;
+  background: #4361ee;
+  box-shadow: 0 4px 12px rgba(67, 97, 238, 0.2);
+}
+
+.control-btn svg {
+  width: 1.2rem;
+  height: 1.2rem;
+  transition: transform 0.2s ease;
+}
+
+.control-btn:hover {
+  background: #3651d4;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(67, 97, 238, 0.3);
+}
+
+.control-btn:hover svg {
+  transform: scale(1.1);
+}
+
+/* Add segment button specific styles */
+.add-segment-btn {
+  padding: 0 2rem;
+  background: #10b981;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+  font-size: 1rem;
+}
+
+.add-segment-btn svg {
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.2rem;
+}
+
+.add-segment-btn:hover {
+  background: #0ea371;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(16, 185, 129, 0.3);
+}
+
+/* Download button specific styles */
+.download-btn {
+  margin-left: auto;
+  padding: 0 2rem;
+  background: #f43f5e;
+  box-shadow: 0 4px 12px rgba(244, 63, 94, 0.2);
+  font-size: 1rem;
+}
+
+.download-btn svg {
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.2rem;
+}
+
+.download-btn:hover:not(:disabled) {
+  background: #e11d48;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(244, 63, 94, 0.3);
+}
+
+.download-btn:disabled {
+  background: #cbd5e1;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+  opacity: 0.8;
+}
+
+/* Active state for all buttons */
+.control-btn:active,
+.add-segment-btn:active,
+.download-btn:active:not(:disabled) {
+  transform: translateY(1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Focus states */
+.control-btn:focus,
+.add-segment-btn:focus,
+.download-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.4);
+}
+
+/* Loading state animation */
+.download-btn.loading::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .controls {
+    flex-direction: column;
+    padding: 1.2rem;
+  }
+
+  .control-btn,
+  .add-segment-btn,
+  .download-btn {
+    width: 100%;
+  }
+
+  .download-btn {
+    margin-left: 0;
+    margin-top: 0.5rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .controls {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    justify-content: space-between;
+  }
+
+  .control-btn,
+  .add-segment-btn {
+    width: calc(50% - 0.4rem);
+  }
+
+  .add-segment-btn {
+    padding: 0;
+  }
+
+  .add-segment-btn span {
+    display: none;
+  }
+
+  .add-segment-btn svg {
+    margin: 0;
+  }
+
+  .download-btn {
+    width: 100%;
+    order: 3;
+    margin-top: 0.4rem;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .controls {
+    background: #1f2937;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  .download-btn:disabled {
+    background: #4b5563;
+  }
+}

@@ -1,0 +1,68 @@
+/* Previous styles remain the same... */
+
+/* Controls section */
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: #f8fafc;
+  border-radius: 12px;
+  margin: 1rem 0;
+}
+
+/* Previous button styles remain the same... */
+
+/* Update responsive styles */
+@media (max-width: 768px) {
+  .app {
+    padding: 1rem;
+  }
+
+  .video-editor {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 16px;
+  }
+
+  .controls {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .control-btn,
+  .add-segment-btn,
+  .download-btn {
+    width: 100%;
+  }
+
+  .download-btn {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 400px) {
+  .controls {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: space-between;
+  }
+
+  .control-btn,
+  .add-segment-btn {
+    width: calc(50% - 0.25rem);
+    padding: 0;
+    font-size: 0.9rem;
+  }
+
+  .add-segment-btn span {
+    display: none;
+  }
+
+  .download-btn {
+    width: 100%;
+    order: 3;
+    margin-top: 0.5rem;
+  }
+}

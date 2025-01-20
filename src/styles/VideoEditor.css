@@ -1,0 +1,246 @@
+/* Main container */
+.video-editor {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Upload section */
+.upload-section {
+  text-align: center;
+  padding: 3rem;
+  margin-bottom: 2rem;
+  border: 2px dashed #cbd5e0;
+  border-radius: 8px;
+  background: white;
+  transition: all 0.3s ease;
+}
+
+.upload-section:hover {
+  border-color: #4a90e2;
+  background: #f7fafc;
+}
+
+.upload-btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  color: white;
+  background: #4a90e2;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.upload-btn:hover {
+  background: #357abd;
+}
+
+/* Video container */
+.video-container {
+  position: relative;
+  width: 100%;
+  margin-bottom: 2rem;
+  background: #000;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.main-video {
+  width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+}
+
+/* Video controls */
+.video-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.control-btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  background: #4a90e2;
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.control-btn:hover {
+  background: #357abd;
+}
+
+.control-btn:disabled {
+  background: #cbd5e0;
+  cursor: not-allowed;
+}
+
+/* Progress bar */
+.video-progress {
+  width: 100%;
+  height: 6px;
+  background: rgba(203, 213, 224, 0.3);
+  border-radius: 3px;
+  cursor: pointer;
+  position: relative;
+}
+
+.progress-bar {
+  height: 100%;
+  background: #4a90e2;
+  border-radius: 3px;
+  transition: width 0.1s linear;
+}
+
+.progress-handle {
+  width: 16px;
+  height: 16px;
+  background: white;
+  border: 2px solid #4a90e2;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+/* Segments */
+.segment-list {
+  margin-top: 2rem;
+  background: white;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.segment-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-bottom: 1px solid #edf2f7;
+}
+
+.segment-item:last-child {
+  border-bottom: none;
+}
+
+/* Download progress */
+.download-progress {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  min-width: 300px;
+}
+
+.progress-info {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: #4a5568;
+}
+
+/* Error popup */
+.error-popup {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  background: #fff5f5;
+  border-left: 4px solid #fc8181;
+  padding: 1rem;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .video-editor {
+    padding: 1rem;
+  }
+
+  .video-controls {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .control-btn {
+    width: 100%;
+  }
+
+  .download-progress {
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+  }
+}
+
+/* Loading states */
+.loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/* Hover effects */
+.segment-item:hover {
+  background: #f7fafc;
+}
+
+/* Focus states */
+.control-btn:focus,
+.upload-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.3);
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .video-editor {
+    background: #1a202c;
+    color: #f7fafc;
+  }
+
+  .upload-section {
+    background: #2d3748;
+    border-color: #4a5568;
+  }
+
+  .video-controls,
+  .segment-list {
+    background: #2d3748;
+  }
+
+  .segment-item {
+    border-bottom-color: #4a5568;
+  }
+
+  .error-popup {
+    background: #742a2a;
+    color: #fff;
+  }
+}
